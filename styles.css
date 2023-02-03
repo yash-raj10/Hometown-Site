@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   text-align: center;
   font-family: "Josefin Sans", sans-serif;
@@ -19,9 +24,7 @@ body {
   padding: 10px 10px;
   border-radius: 10px;
   text-shadow: 0 0 2px rgb(235, 237, 121);
-  width: 450px;
   margin: 110px 0 5px 0;
-  font-size: 270%;
   font-weight: bold;
   font-family: "Josefin Sans", sans-serif;
   font-family: "Tangerine", cursive;
@@ -34,34 +37,26 @@ body {
   color: aliceblue;
   text-shadow: 0 0 50px black;
   margin: 50px 0 10px 0;
-  width: 600px;
+  max-width: 50rem;
   background: rgba(0, 0, 0, 0.7);
 }
 
 #places {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   color: aliceblue;
+  margin: 0 20px;
 }
 
-.a {
+.a,.b,.c {
   background-color: #495057;
   margin: 10px 10px;
   border-radius: 10px;
+  max-width: 600px;
+
 }
 
-.b {
-  background-color: #495057;
-  margin: 10px 10px;
-  border-radius: 10px;
-}
 
-.c {
-  background-color: #495057;
-  margin: 10px 10px;
-  border-radius: 10px;
-}
 
 #aa {
   margin: 10px 10px;
@@ -101,7 +96,6 @@ body {
 
 .card {
   margin: 40px auto;
-  width: 400px;
   padding: 20px;
   display: flex;
   justify-content: space-around;
@@ -112,8 +106,15 @@ body {
   border-bottom: 8px solid #ade8f4;
   border-top: 8px solid #03045e;
   border-radius: 10px 40px;
+  max-width: 400px;
+  
 }
-
+/* added .card-content to arrange content within card */
+.card-content{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
 footer {
   margin: 20px auto;
 }
@@ -126,4 +127,23 @@ button {
 
 button:hover {
   transform: scale(1.1);
+}
+
+
+/* media queries */
+
+@media (max-width:780px) {
+  #places{
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .a,.b,.c{
+    max-width: 400px;
+  }
+}
+@media (max-width:500px) {
+  .card{
+    margin: 20px;
+  }
 }
